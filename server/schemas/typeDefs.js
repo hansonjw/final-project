@@ -15,7 +15,7 @@ const typeDefs = gql`
 
     type Perspective {
         _id: ID
-        author: String
+        email: String
         security: String
         text: String
         date: Date
@@ -23,9 +23,10 @@ const typeDefs = gql`
     }
 
     type Comment {
-        date: Date
+        commentDate: Date
         commentText: String
-        displayName: String
+        email: String
+        _id: ID
     }
 
     input newComment {
@@ -33,21 +34,17 @@ const typeDefs = gql`
         author: String
     }
 
-    input newPerspective {
-        text: String
-        security: String
-    }
-
     type Query {
         me: User
         perspectives: [Perspective]
         users: [User]
+        perspective(_id: ID!): Perspective
     }
 
     type Mutation {
         createUser(displayName: String!, email: String!, password: String!): Auth
-        addPerspective(input: newPerspective): User
-        addComment(input: newComment): Perspective
+        addPerspective(security: String!, text: String!): Perspective
+        addComment(perspectiveId: ID!, text: String): Perspective
         login(email: String!, password: String!): Auth
     }
 

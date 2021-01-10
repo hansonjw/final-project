@@ -5,7 +5,7 @@ const commentSchema = require('./Comment');
 
 const perspectiveSchema = new Schema(
     {
-        displayName: {
+        email: {
             type: String,
             required: true
         },
@@ -24,7 +24,7 @@ const perspectiveSchema = new Schema(
         },
         comments: [{
                 type: Schema.Types.ObjectId,
-                ref: 'Perspective'
+                ref: 'Comment'
             }]
     },
     {
