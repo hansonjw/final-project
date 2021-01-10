@@ -1,20 +1,13 @@
 const mongoose = require('mongoose');
-
 const { Schema } = mongoose;
-const bcrypt = rqeuire('bcrypt');
+
+const bcrypt = require('bcrypt');
 
 // require other models??
-const Perspective = require('./Perspective');
-const Comment = require('./Comment');
 
 
 const userSchema = new Schema({
-    firstName: {
-        type: String,
-        required: true,
-        trim: true
-    },
-    lastName: {
+    displayName: {
         type: String,
         required: true,
         trim: true
@@ -22,7 +15,8 @@ const userSchema = new Schema({
     email: {
         type: String,
         required: true,
-        unique: true
+        unique: true,
+        match: [/.+@.+\..+/, 'Must match an email address!']
     },
     password: {
         type: String,
@@ -33,12 +27,6 @@ const userSchema = new Schema({
         {
             type: Schema.Types.ObjectId,
             ref: 'Perspective'
-        }
-    ],
-    comments: [
-        {
-            type: Schema.Types.ObjectId,
-            ref: 'Comment'
         }
     ]
 });
@@ -54,7 +42,7 @@ userSchema.pre('save', async function (next) {
 
 // compare incoming password with hashed password
 userSchema.methods.isCorrectPassword = async function(password) {
-    return await bycrypt.compare(password, this.password);
+    return await bcrypt.compare(password, this.password);
 };
 
 // create the user model suing the userSchema

@@ -1,5 +1,4 @@
 const mongoose = require('mongoose');
-
 const { Schema } = mongoose;
 
 const commentSchema = new Schema({
@@ -7,13 +6,12 @@ const commentSchema = new Schema({
         type: Date,
         default: Date.now
     },
-    text: {
+    commentText: {
         type: String,
         required: true
     },
-    writtenBy: {
-        type: Schema.Types.ObjectId,
-        ref: 'User',
+    displayName: {
+        type: String,
         required: true
     }
 })
