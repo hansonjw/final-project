@@ -1,7 +1,10 @@
 import React from 'react';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 
-// import pages...as you develop them...
+// import pages and components...as you develop them...
+import Header from './components/Header';
+import Footer from './components/Footer';
+import ExampleChart from './pages/SearchSecurity.js'
 
 // Is this for front end authentication??  or does this just store the token in local storage
 import { ApolloProvider } from '@apollo/react-hooks'
@@ -23,7 +26,15 @@ const client = new ApolloClient({
 function App() {
   return (
     <ApolloProvider client={client}>
-      <div className="App">This is a test, Justin!</div>
+            <Router>
+              <div className="flex-column justify-flex-start min-100-vh">
+                <Header />
+                  <div className="App">This is a test, Justin!</div>
+                  {/* render(<ExampleChart />, document.getElementByID("app")); */}
+                  <ExampleChart />
+                <Footer />
+              </div>
+            </Router>
     </ApolloProvider>
   );
 }
