@@ -23,18 +23,21 @@ const data = [
   [6.5, 7]
 ];
  
-const ExampleChart = () => {
+const StockChart = () => {
   return (
-    <Chart
-      chartType="ScatterChart"
-      data={data}
-      options={options}
-      width="80%"
-      height="400px"
-      legendToggle
-    />
+    <div>
+      <div>StockChart page...</div>
+      <Chart
+        chartType="ScatterChart"
+        data={data}
+        options={options}
+        width="80%"
+        height="400px"
+        legendToggle
+      />
+    </div>
   );
 };
 
-export default ExampleChart
+export default StockChart;
  
