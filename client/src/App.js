@@ -9,10 +9,12 @@ import Footer from './components/Footer';
 import Home from './pages/Home';
 import Login from './pages/Login';
 import Signup from './pages/Signup';
+import StockQuery from './pages/StockQuery';
 import NoMatch from './pages/NoMatch';
 
+
 // Temporary to get google charts to work
-import StockChart from './pages/StockChart.js'
+
 
 
 
@@ -40,7 +42,7 @@ function App() {
                     <Route exact path="/" component={Home} />
                     <Route exact path="/login" component={Login} />
                     <Route exact path="/signup" component={Signup} />
-                    <Route exact path="/stockchart" component={StockChart} />
+                    <Route exact path="/stockquery" component={StockQuery} />
                     <Route component={NoMatch} />
                 </Switch>
                 <Footer />

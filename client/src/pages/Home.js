@@ -10,6 +10,7 @@ const Home = () => {
       <div>Homepage</div>
       <div> 
         <Link to="/stockchart">See a chart!</Link>
+        <Link to="/stockquery">Get a stock!</Link>
       </div>
     </div>
   );
