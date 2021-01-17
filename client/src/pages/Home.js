@@ -5,12 +5,12 @@ import Auth from '../utils/auth';
 
  
 const Home = () => {
+
   return (
     <div>
-      <div>Homepage</div>
-      <div> 
-        <Link to="/stockchart">See a chart!</Link>
-        <Link to="/stockquery">Get a stock!</Link>
+      <h2>Homepage</h2>
+      <div>
+        <Link to="/stockquery">go get stock data!</Link>
       </div>
     </div>
   );

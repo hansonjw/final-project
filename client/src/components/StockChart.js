@@ -10,7 +10,7 @@ import { Chart } from "react-google-charts";
 const StockChart = (chartData) => {
 
   const options = {
-    title: "Age vs. Weight comparison",
+    title: "Security Price",
     hAxis: { title: "Price", viewWindow: { min: 0, max: 100} },
     vAxis: { title: "Date", viewWindow: { min: 0, max: 1000 } },
     legend: "none"

@@ -2,6 +2,9 @@ import React, { useState, useEffect } from 'react';
 import { fetchSecurityData } from '../utils/API';
 
 import StockChart from '../components/StockChart.js';
+import GetPerspectives from '../components/GetPerspectives.js';
+import { useQuery } from '@apollo/react-hooks';
+import { QUERY_GET_SECURITY } from '../utils/queries';
 
 
 const StockQuery = () => {
@@ -11,14 +14,17 @@ const StockQuery = () => {
 
     console.log(stockData);
 
+    // API call to alphavantage...
     const handleFormSubmit = async (event) => {
         event.preventDefault();
         
         if (!tickerSymbol) {
-            console.log("ticker symbol is not being collected or passed, data function not executed...");
+            console.log("please enter a ticker symbol...");
             return false;
         }
 
+        // need to refactor this into the component instead of direct on this page
+        // idea: submit ticker to component and API...all data munging should happen there, not here... 
         try {
             const response = await fetchSecurityData(tickerSymbol);
 
@@ -41,7 +47,6 @@ const StockQuery = () => {
             });
             
             setStockData(securityData);
-            setTickerSymbol('');
 
         } catch(err) {
             console.error(err);
@@ -55,7 +60,7 @@ const StockQuery = () => {
 
             <form onSubmit={handleFormSubmit}>
 
-                <label htmlFor="email">Get price data:</label>
+                <label>Get price data:</label>
                 <input
                     placeholder="enter a ticker symbol"
                     name="tickerSymbol"
@@ -66,7 +71,8 @@ const StockQuery = () => {
                 <button type='submit'>
                     Get Data
                 </button>
-                <StockChart chartData={stockData}/>
+                <StockChart chartData={stockData} />
+                <GetPerspectives ticker={tickerSymbol} />
             </form>
 
         </div>

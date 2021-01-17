@@ -10,13 +10,8 @@ import Home from './pages/Home';
 import Login from './pages/Login';
 import Signup from './pages/Signup';
 import StockQuery from './pages/StockQuery';
+import NewPage from './components/GetPerspectives';
 import NoMatch from './pages/NoMatch';
-
-
-// Temporary to get google charts to work
-
-
-
 
 
 const client = new ApolloClient({

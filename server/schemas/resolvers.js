@@ -49,6 +49,14 @@ const resolvers = {
             return Perspective.find()
             .select('-__v -password')
             .populate('comments');
+        },
+
+        getSecurity: async(parent, { ticker }, context) => {
+            const params = {}
+            params.security = ticker;
+            return Perspective.find(params)
+            // .select('-__v -password')
+            .populate('comments');
         }
     },
 

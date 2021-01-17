@@ -39,6 +39,7 @@ const typeDefs = gql`
         perspectives: [Perspective]
         users: [User]
         perspective(_id: ID!): Perspective
+        getSecurity(ticker: String!): [Perspective]
     }
 
     type Mutation {
