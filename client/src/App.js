@@ -10,8 +10,10 @@ import Home from './pages/Home';
 import Login from './pages/Login';
 import Signup from './pages/Signup';
 import StockQuery from './pages/StockQuery';
-import NewPage from './components/GetPerspectives';
+import GetPerspectives from './components/GetPerspectives';
+import AddPerspective from './pages/AddPerspective';
 import NoMatch from './pages/NoMatch';
+import SinglePerspective from './pages/SinglePerspective';
 
 
 const client = new ApolloClient({
@@ -38,6 +40,8 @@ function App() {
                     <Route exact path="/login" component={Login} />
                     <Route exact path="/signup" component={Signup} />
                     <Route exact path="/stockquery" component={StockQuery} />
+                    <Route exact path="/addperspective/:ticker" component={AddPerspective} />
+                    <Route exact path="/singleperspective/:id" component={SinglePerspective} />
                     <Route component={NoMatch} />
                 </Switch>
                 <Footer />

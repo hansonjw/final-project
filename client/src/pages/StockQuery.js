@@ -3,30 +3,37 @@ import { fetchSecurityData } from '../utils/API';
 
 import StockChart from '../components/StockChart.js';
 import GetPerspectives from '../components/GetPerspectives.js';
+import AddPerspective from './AddPerspective.js';
 import { useQuery } from '@apollo/react-hooks';
 import { QUERY_GET_SECURITY } from '../utils/queries';
 
 
 const StockQuery = () => {
 
-    const [tickerSymbol, setTickerSymbol] = useState('');
+    const [searchTicker, setSearchTicker] = useState('');
+    const [ticker, setTicker] = useState('');
     const [stockData, setStockData] = useState('');
 
     console.log(stockData);
 
+    const handleChange = event => {
+          setSearchTicker(event.target.value);
+    };
+
     // API call to alphavantage...
     const handleFormSubmit = async (event) => {
         event.preventDefault();
-        
-        if (!tickerSymbol) {
-            console.log("please enter a ticker symbol...");
-            return false;
-        }
+
+
+        // if (!ticker) {
+        //     console.log("please enter a ticker symbol...");
+        //     return false;
+        // }
 
         // need to refactor this into the component instead of direct on this page
         // idea: submit ticker to component and API...all data munging should happen there, not here... 
         try {
-            const response = await fetchSecurityData(tickerSymbol);
+            const response = await fetchSecurityData(searchTicker);
 
             if(!response.ok) {
                 throw new Error('something is amiss...check your ticker symbol')
@@ -47,7 +54,8 @@ const StockQuery = () => {
             });
             
             setStockData(securityData);
-
+            setTicker(searchTicker);
+            setSearchTicker('');
         } catch(err) {
             console.error(err);
         }
@@ -64,17 +72,16 @@ const StockQuery = () => {
                 <input
                     placeholder="enter a ticker symbol"
                     name="tickerSymbol"
-                    value={tickerSymbol}
-                    onChange={(e) => setTickerSymbol(e.target.value)}
+                    value={searchTicker}
+                    onChange={handleChange}
                     type="text"
                 />
                 <button type='submit'>
                     Get Data
                 </button>
-                <StockChart chartData={stockData} />
-                <GetPerspectives ticker={tickerSymbol} />
             </form>
-
+            <StockChart chartData={stockData} />
+            <GetPerspectives ticker={ticker} />
         </div>
     )
 }

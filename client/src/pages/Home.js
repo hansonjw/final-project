@@ -10,7 +10,7 @@ const Home = () => {
     <div>
       <h2>Homepage</h2>
       <div>
-        <Link to="/stockquery">go get stock data!</Link>
+        <Link to="/stockquery">go to the search page</Link>
       </div>
     </div>
   );

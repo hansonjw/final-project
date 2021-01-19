@@ -10,28 +10,30 @@ import { QUERY_GET_SECURITY } from '../utils/queries';
 const GetPerspectives = (tickerSymbol) => {
 
   // get perspectives from ticker
-  console.log("we are in the GetPerspectives component...")
-  console.log(tickerSymbol.ticker);
   const { loading, data } = useQuery(QUERY_GET_SECURITY, {
       variables: { ticker: tickerSymbol.ticker }
   });
-  console.log(data);
   const perspectiveData = data?.getSecurity || [];
-  console.log(perspectiveData);
+  
   if (!perspectiveData.length) {
     return <h3>...</h3>;
   }
 
   return (
     <div>
-      <h1>NewPage</h1>
-      <h2>{tickerSymbol.ticker}</h2>
+      <h1>Get Perspective Component</h1>
+      <Link to={`/addperspective/${tickerSymbol.ticker}`}><h2>{tickerSymbol.ticker} - Add a Perspective</h2></Link>
+      <h2>List of current perspectives:</h2>
       {perspectiveData.map(aPerspective => (
-        <div>
-          <p>{aPerspective.text}</p>
-          <h4>{aPerspective.email}</h4>
-          <p>{aPerspective.comments}</p>
-        </div>
+        <Link to={`/singleperspective/${aPerspective._id}`}>
+          <div>
+            <p>{aPerspective.text}</p>
+            <h4>{aPerspective.email}</h4>
+            <p>{aPerspective.comments}</p>
+            <p>{aPerspective.date}</p>
+            <p>{aPerspective._id}</p>
+          </div>
+        </Link>
         ))}
     </div>
   );

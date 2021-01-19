@@ -42,7 +42,9 @@ const resolvers = {
         },
 
         perspective: async(parent, { _id }, context) => {
-            return Perspective.findOne( {_id });
+            return Perspective.findOne( {_id })
+            .select('-__v -password')
+            .populate('comments');
         },
 
         perspectives: async () => {

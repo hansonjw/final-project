@@ -1,12 +1,13 @@
 import gql from 'graphql-tag';
 
-// developers insight, learning: this is what is put into graph ql playground...
+// developer insight, learning: this is what is put into graph ql playground...
 export const QUERY_GET_SECURITY = gql`
     query getSecurity($ticker: String!) {
         getSecurity(ticker: $ticker) {
             email
             security
             text
+            date
             _id
             comments {
               _id
@@ -17,34 +18,20 @@ export const QUERY_GET_SECURITY = gql`
     } 
 `;
 
-
-// getSecurity(ticker : $ticker) {
-//     email
-//     security
-//     text
-//     _id
-//     comments {
-//       _id
-//       commentText
-//       email
-//     }
-//   }
-
-
-// export const QUERY_THOUGHTS = gql`
-//   query thoughts($username: String) {
-//     thoughts(username: $username) {
-//       _id
-//       thoughtText
-//       createdAt
-//       username
-//       reactionCount
-//       reactions {
-//         _id
-//         createdAt
-//         username
-//         reactionBody
-//       }
-//     }
-//   }
-// `;
+export const QUERY_GET_PERSPECTIVE = gql`
+    query perspective($_id: ID!){
+        # get all users
+        perspective(_id: $_id) {
+            email
+            security
+            text
+            date
+            _id
+            comments {
+                _id
+                commentText
+                email
+            }
+        }
+    }
+`;

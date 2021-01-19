@@ -23,3 +23,41 @@ export const CREATE_USER = gql`
         }
     }
 `;
+
+
+
+export const ADD_PERSPECTIVE = gql`
+    mutation addPerspective($security: String!, $text: String!) {
+        addPerspective(security:$security, text: $text)
+            {
+                _id
+                email
+                security
+                text
+                date
+                comments {
+                    commentText
+            }
+        }
+    }
+`;
+
+
+
+
+// scratch work...
+// addPerspective(security: String!, text: String!): Perspective
+
+// mutation addPerspective($security: String!, $text: String!) {
+//     addPerspective(security:$security, text: $text)
+//         {
+//             _id
+//             email
+//             security
+//             text
+//             date
+//             comments {
+//                 commentText
+//         }
+//     }
+// }
