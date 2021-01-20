@@ -6,6 +6,7 @@ import GetPerspectives from '../components/GetPerspectives.js';
 import AddPerspective from './AddPerspective.js';
 import { useQuery } from '@apollo/react-hooks';
 import { QUERY_GET_SECURITY } from '../utils/queries';
+import { Link } from "react-router-dom";
 
 
 const StockQuery = () => {
@@ -17,18 +18,12 @@ const StockQuery = () => {
     console.log(stockData);
 
     const handleChange = event => {
-          setSearchTicker(event.target.value);
+        setSearchTicker(event.target.value.toUpperCase());
     };
 
     // API call to alphavantage...
     const handleFormSubmit = async (event) => {
         event.preventDefault();
-
-
-        // if (!ticker) {
-        //     console.log("please enter a ticker symbol...");
-        //     return false;
-        // }
 
         // need to refactor this into the component instead of direct on this page
         // idea: submit ticker to component and API...all data munging should happen there, not here... 
@@ -55,6 +50,7 @@ const StockQuery = () => {
             
             setStockData(securityData);
             setTicker(searchTicker);
+            console.log(ticker);
             setSearchTicker('');
         } catch(err) {
             console.error(err);
@@ -81,6 +77,7 @@ const StockQuery = () => {
                 </button>
             </form>
             <StockChart chartData={stockData} />
+            <Link to={`/addperspective/${ticker}`}><h2>{ticker} - Add a Perspective</h2></Link>
             <GetPerspectives ticker={ticker} />
         </div>
     )

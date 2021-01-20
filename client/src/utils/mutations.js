@@ -25,11 +25,9 @@ export const CREATE_USER = gql`
 `;
 
 
-
 export const ADD_PERSPECTIVE = gql`
     mutation addPerspective($security: String!, $text: String!) {
-        addPerspective(security:$security, text: $text)
-            {
+        addPerspective(security:$security, text: $text){
                 _id
                 email
                 security
@@ -37,6 +35,24 @@ export const ADD_PERSPECTIVE = gql`
                 date
                 comments {
                     commentText
+                }
+        }
+    }
+`;
+
+
+export const ADD_COMMENT = gql`
+    mutation addComment($perspectiveId: ID!, $text: String!) {
+        addComment(perspectiveId:$perspectiveId, text: $text){
+            _id
+            email
+            security
+            text
+            date
+            comments {
+                commentText
+                email
+                commentDate
             }
         }
     }

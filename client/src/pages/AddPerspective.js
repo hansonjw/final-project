@@ -1,9 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Link } from "react-router-dom";
 
-import Auth from '../utils/auth';
-
-import { useQuery } from '@apollo/react-hooks';
 import { useMutation } from '@apollo/react-hooks';
 import { ADD_PERSPECTIVE } from '../utils/mutations';
 import { useParams } from 'react-router-dom';
