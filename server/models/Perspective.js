@@ -1,5 +1,6 @@
 const mongoose = require('mongoose');
 const { Schema } = mongoose;
+const dateFormat = require('../utils/dateFormat');
 
 const commentSchema = require('./Comment');
 
@@ -19,8 +20,9 @@ const perspectiveSchema = new Schema(
         },
         date: {
             type: Date,
-            default: Date.now
-            // consider function from deep-thoughts
+            default: Date.now,
+            get: timestamp => dateFormat(timestamp)
+            // borrowed function from deep-thoughts
         },
         comments: [{
                 type: Schema.Types.ObjectId,

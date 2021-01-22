@@ -1,5 +1,4 @@
-import React, { useState, useEffect } from 'react';
-import { Link } from "react-router-dom";
+import React, { useState } from 'react';
 
 import Auth from '../utils/auth';
 import { useParams } from 'react-router-dom';

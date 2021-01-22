@@ -1,8 +1,6 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import { Link } from "react-router-dom";
 
-import { useQuery } from '@apollo/react-hooks';
-import { QUERY_GET_SECURITY } from '../utils/queries';
  
 const PerspectiveList = ({ perspectiveData }) => {
 

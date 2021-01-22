@@ -9,9 +9,6 @@ import Footer from './components/Footer';
 import Home from './pages/Home';
 import Login from './pages/Login';
 import Signup from './pages/Signup';
-import StockQuery from './components/StockQuery';
-import PerspectivesList from './components/PerspectiveList';
-import AddPerspective from './components/AddPerspective';
 import NoMatch from './pages/NoMatch';
 import SinglePerspective from './pages/SinglePerspective';
 

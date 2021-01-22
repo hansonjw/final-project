@@ -18,12 +18,12 @@ const typeDefs = gql`
         email: String
         security: String
         text: String
-        date: Date
+        date: String
         comments: [Comment]
     }
 
     type Comment {
-        commentDate: Date
+        commentDate: String
         commentText: String
         email: String
         _id: ID

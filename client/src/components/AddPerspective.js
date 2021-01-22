@@ -1,9 +1,8 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 
 import { useMutation } from '@apollo/react-hooks';
 import { ADD_PERSPECTIVE } from '../utils/mutations';
 import { QUERY_GET_PERSPECTIVES, QUERY_ME } from '../utils/queries';
-import { useParams } from 'react-router-dom';
 
 // import GetPerspectives from './GetPerspectives.js';
 
@@ -11,12 +10,14 @@ const AddPerspective = (tickerSymbol) => {
 
   // const { ticker } = useParams();
 
+  // can't quite get this cache thing to work...
+  // could do something using links instead of buttons...
   const [perspectiveText, setText] = useState('');
   const [addPerspective, { error }] = useMutation(ADD_PERSPECTIVE, {
     update(cache, { data: { addPerspective } }) {
       try {
         const { perspectives } = cache.readQuery({ query: QUERY_GET_PERSPECTIVES });
-        cache.writeWuery({
+        cache.writeQuery({
           query: QUERY_GET_PERSPECTIVES,
           data: { perspectives: [addPerspective, ...perspectives] }
         });
@@ -24,38 +25,15 @@ const AddPerspective = (tickerSymbol) => {
         console.error(e);
       }
 
-      const { me } = cache.readQuery({ query: QUERY_ME });
+      console.log(cache);
+
+      const { perspectives } = cache.readQuery({ query: QUERY_GET_PERSPECTIVES });
       cache.writeQuery({
-        query: QUERY_ME,
-        data: { me: { ...me, perspectives: [...me.perspectives, addPerspective] }}
+        query: QUERY_GET_PERSPECTIVES,
+          data: { perspectives: [addPerspective, ...perspectives] }
       });
     }
   });
-
-
-
-//   const [addThought, { error }] = useMutation(ADD_THOUGHT, {
-//     update(cache, { data: { addThought } }) {
-//       try {
-//         // could potentially not exist yet, so wrap in a try...catch
-//         const { thoughts } = cache.readQuery({ query: QUERY_THOUGHTS });
-//         cache.writeQuery({
-//           query: QUERY_THOUGHTS,
-//           data: { thoughts: [addThought, ...thoughts] }
-//         });
-//       } catch (e) {
-//         console.error(e);
-//       }
-  
-//       // update me object's cache, appending new thought to the end of the array
-//       const { me } = cache.readQuery({ query: QUERY_ME });
-//       cache.writeQuery({
-//         query: QUERY_ME,
-//         data: { me: { ...me, thoughts: [...me.thoughts, addThought] } }
-//       });
-//     }
-// });
-
 
 
   const handleChange = event => {

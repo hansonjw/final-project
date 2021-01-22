@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { fetchSecurityData } from '../utils/API';
 
 import StockChart from './StockChart.js';
@@ -6,7 +6,6 @@ import PerspectiveList from './PerspectiveList.js';
 import AddPerspective from './AddPerspective.js';
 import { useQuery } from '@apollo/react-hooks';
 import { QUERY_GET_SECURITY } from '../utils/queries';
-import { Link } from "react-router-dom";
 
 
 const StockQuery = () => {
