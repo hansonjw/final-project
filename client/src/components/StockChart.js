@@ -1,8 +1,5 @@
 import React, { useState, useEffect } from 'react';
 
-import Auth from '../utils/auth';
-
-// import { getSecurityData } from '..util/API';
 
 import { Chart } from "react-google-charts";
  
@@ -11,20 +8,12 @@ const StockChart = (chartData) => {
 
   const options = {
     title: "Security Price",
-    hAxis: { title: "Price", viewWindow: { min: 0, max: 100} },
-    vAxis: { title: "Date", viewWindow: { min: 0, max: 1000 } },
+    // hAxis: { title: "Price", viewWindow: { min: 0, max: 100} },
+    hAxis: { title: "Date", format: 'M/d/y' },
+    // vAxis: { title: "Date", viewWindow: { min: 0, max: 1000 } },
+    vAxis: { title: "Price" },
     legend: "none"
   };
-  // const bdata = [
-  //   ["Age", "Weight"],
-  //   [8, 12],
-  //   [4, 5.5],
-  //   [11, 14],
-  //   [4, 5],
-  //   [3, 3.5],
-  //   [6.5, 7]
-  // ];
-  // console.log(bdata);
 
   if (chartData.chartData.length<=1){
     return (

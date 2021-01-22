@@ -35,3 +35,37 @@ export const QUERY_GET_PERSPECTIVE = gql`
         }
     }
 `;
+
+export const QUERY_GET_PERSPECTIVES = gql`
+    query {
+        perspectives {
+            email
+            security
+            text
+            date
+            _id
+            comments {
+                _id
+                commentText
+                email
+            }
+        }
+    }
+`;
+
+export const QUERY_ME = gql`
+    query{
+        me {
+        displayName
+        email
+        _id
+        perspectives {
+            date
+            security
+            text
+            _id
+            email
+        }
+        }
+    }
+`;

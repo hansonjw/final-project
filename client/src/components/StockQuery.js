@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { fetchSecurityData } from '../utils/API';
 
-import StockChart from '../components/StockChart.js';
-import GetPerspectives from '../components/GetPerspectives.js';
+import StockChart from './StockChart.js';
+import PerspectiveList from './PerspectiveList.js';
 import AddPerspective from './AddPerspective.js';
 import { useQuery } from '@apollo/react-hooks';
 import { QUERY_GET_SECURITY } from '../utils/queries';
@@ -14,8 +14,6 @@ const StockQuery = () => {
     const [searchTicker, setSearchTicker] = useState('');
     const [ticker, setTicker] = useState('');
     const [stockData, setStockData] = useState('');
-
-    console.log(stockData);
 
     const handleChange = event => {
         setSearchTicker(event.target.value.toUpperCase());
@@ -36,31 +34,39 @@ const StockQuery = () => {
 
             const securityData = await response.json().then(function(data) {
                 
-                const stockData = [['date', 'price']];
+                const headers = ['date', 'price'];
                 const rawData = data['Time Series (Daily)'];
+                const stockData = []
 
                 for (const property in rawData) {
                     let aDate = property;
                     let aPrice = Number(rawData[property]['5. adjusted close']);
                     stockData.push([aDate, aPrice]);
                 };
-
+                // add headers then flip data set so dates go in chronological order
+                stockData.push(headers);
+                stockData.reverse();
                 return stockData;
             });
             
             setStockData(securityData);
             setTicker(searchTicker);
-            console.log(ticker);
             setSearchTicker('');
         } catch(err) {
             console.error(err);
         }
     };
 
+    // get perspectives from ticker
+    const { loading, data } = useQuery(QUERY_GET_SECURITY, {
+        variables: { ticker: ticker }
+    });
+    const perspectiveData = data?.getSecurity || [];
+
 
     return (
         <div>
-            <h1>Stock Query Page</h1>
+            <h1>Stock Query Component</h1>
 
             <form onSubmit={handleFormSubmit}>
 
@@ -77,8 +83,8 @@ const StockQuery = () => {
                 </button>
             </form>
             <StockChart chartData={stockData} />
-            <Link to={`/addperspective/${ticker}`}><h2>{ticker} - Add a Perspective</h2></Link>
-            <GetPerspectives ticker={ticker} />
+            <AddPerspective ticker={ticker} />
+            <PerspectiveList perspectiveData={perspectiveData} />
         </div>
     )
 }

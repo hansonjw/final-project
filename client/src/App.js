@@ -9,9 +9,9 @@ import Footer from './components/Footer';
 import Home from './pages/Home';
 import Login from './pages/Login';
 import Signup from './pages/Signup';
-import StockQuery from './pages/StockQuery';
-import GetPerspectives from './components/GetPerspectives';
-import AddPerspective from './pages/AddPerspective';
+import StockQuery from './components/StockQuery';
+import PerspectivesList from './components/PerspectiveList';
+import AddPerspective from './components/AddPerspective';
 import NoMatch from './pages/NoMatch';
 import SinglePerspective from './pages/SinglePerspective';
 
@@ -39,8 +39,6 @@ function App() {
                     <Route exact path="/" component={Home} />
                     <Route exact path="/login" component={Login} />
                     <Route exact path="/signup" component={Signup} />
-                    <Route exact path="/stockquery" component={StockQuery} />
-                    <Route exact path="/addperspective/:ticker" component={AddPerspective} />
                     <Route exact path="/singleperspective/:id" component={SinglePerspective} />
                     <Route component={NoMatch} />
                 </Switch>

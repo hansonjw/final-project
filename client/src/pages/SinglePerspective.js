@@ -6,6 +6,7 @@ import { useParams } from 'react-router-dom';
 import { useQuery, useMutation } from '@apollo/react-hooks';
 import { QUERY_GET_PERSPECTIVE } from '../utils/queries';
 import { ADD_COMMENT } from '../utils/mutations';
+import CommentList from '../components/CommentList';
 
  
 const SinglePerspective = () => {
@@ -14,14 +15,18 @@ const SinglePerspective = () => {
     const { id: perspectiveId } = useParams();
     const [commentText, setText] = useState('');
     const [addComment, { error }] = useMutation(ADD_COMMENT);
-    console.log (perspectiveId);
 
     // get single perspective data based on parameter
     const { loading, data } = useQuery(QUERY_GET_PERSPECTIVE,{
         variables: { _id: perspectiveId }
     })
+
     const perspectiveData = data?.perspective || [];
     const commentsAr = data?.perspective.comments || [];
+
+    if (loading) {
+        return <div>Loading...</div>;
+    }
 
     const handleChange = event => {
         setText(event.target.value);
@@ -34,7 +39,7 @@ const SinglePerspective = () => {
             await addComment({
                 variables: { perspectiveId: perspectiveId, text: commentText }
             })
-
+            setText('');
         } catch(e) {
             console.error(e);
         }
@@ -61,13 +66,14 @@ const SinglePerspective = () => {
                 <p>{perspectiveData.text}</p>
                 <p>{perspectiveData.email}</p>
                 <p>{perspectiveData.date}</p>
-                {commentsAr.map(aComment => (
+                {/* {commentsAr.map(aComment => (
                     <div>
-                        <p>{aComment._id}</p>
+                        <p>Comment ID: {aComment._id}</p>
                         <p>{aComment.commentText}</p>
-                        <p>{aComment.email}</p>
+                        <p>Comment from: {aComment.email}</p>
                     </div>
-                ))}
+                ))} */}
+                <CommentList comments={commentsAr}></CommentList>
             </div>
         </div>
     );
