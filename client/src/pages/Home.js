@@ -1,4 +1,5 @@
 import React from 'react';
+import { Spacer, SimpleGrid, Center, Button, Stack, Text, Box } from '@chakra-ui/react';
 
 import Auth from '../utils/auth';
 
@@ -11,12 +12,24 @@ const Home = () => {
 
   return (
     <div class="body">
-      <h2>Homepage</h2>
+
       <div>
-        {loggedIn && (
+        {loggedIn ? (
           <div>
             <StockQuery></StockQuery>
           </div>
+        ):(
+          <Center>
+          <Stack spacing={10}>
+              <Spacer />
+              <Center>
+                <Text  fontSize="3xl" color='white'>Welcome to Otium Capital</Text>
+              </Center>
+              <Center>
+                <Text fontSize="m" color='white'>Please login or signup to begin</Text>
+              </Center>
+          </Stack>
+        </Center>
         )}
       </div>
     </div>

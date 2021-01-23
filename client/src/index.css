@@ -23,7 +23,8 @@ code {
 .mainpage {
   position: relative;
   min-height: 100vh;
-  background: #80002a;
+  /* background: #1a0008; */
+  background: #660033;
 }
 
 .body {

@@ -38,7 +38,9 @@ function Login(props) {
 
         <Center>
         <Stack spacing={5}>
-          <Text fontSize="3xl" color='white'>Login Page</Text>
+          <Center>
+            <Text fontSize="3xl" color='white'>Login Page</Text>
+          </Center>
           <form onSubmit={handleFormSubmit}>
             <FormControl>
               <Stack spacing={7}>

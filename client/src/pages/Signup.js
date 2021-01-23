@@ -37,7 +37,9 @@ function Signup(props) {
     <div class="body">
       <Center>
         <Stack spacing={5}>
-          <Text fontSize="3xl" color='white'>Signup Page</Text>
+          <Center>
+            <Text fontSize="3xl" color='white'>Signup Page</Text>
+          </Center>
           <form onSubmit={handleFormSubmit}>
             <FormControl>
               <Stack spacing={5}>

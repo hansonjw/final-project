@@ -10,7 +10,7 @@ const Footer = () => {
         justify="space-between"
         wrap="wrap"
         padding=".5rem"
-        bg="red.900"
+        bg="#4d0026"
         color="white"
       >
         <Center w="500px">fostering wealth and wisdom...</Center>
@@ -20,7 +20,7 @@ const Footer = () => {
         </Center>
         {/* <Spacer /> */}
         <Center w="500px">
-          <a href="https://twitter.com/hansonjw">Twitter</a>
+          <a href="https://twitter.com/hansonjw" target="_blank">Twitter</a>
         </Center>
       </Flex>
     </footer>

@@ -1,7 +1,10 @@
 import React from 'react';
 import { Link } from "react-router-dom";
 
- 
+import { Input, HStack, Stack, Box, Spacer, Heading, Flex, Center, Text, Button } from '@chakra-ui/react';
+import { breakpoints } from '../themes';
+
+
 const PerspectiveList = ({ perspectiveData }) => {
 
   if (!perspectiveData.length) {
@@ -14,15 +17,34 @@ const PerspectiveList = ({ perspectiveData }) => {
       
       <h2>List of current perspectives:</h2>
       {perspectiveData.map(aPerspective => (
-        <Link to={`/singleperspective/${aPerspective._id}`}>
-          <div>
-            <p>{aPerspective.text}</p>
-            <h4>Posted by: {aPerspective.email}</h4>
-            <p>Number of comments: {aPerspective.comments.length}</p>
-            <p>Date: {aPerspective.date}</p>
-            <p>ID: {aPerspective._id}</p>
-          </div>
-        </Link>
+        <Spacer>
+        <Center>
+          <Link to={`/singleperspective/${aPerspective._id}`}>
+            <Box p="3" w={[300, 400, 1000]}>
+              {/* <HStack w='100%'> */}
+              <Flex
+                justify="space-between"
+                wrap="wrap"
+                w="100%"
+              >
+                <Text fontSize="xs" color='#999999'>Posted by: {aPerspective.email}</Text>
+                <Text fontSize="xs" color='#999999'>Date: {aPerspective.date}</Text>
+              </Flex>
+              {/* </HStack>  */}
+              <Box>
+                <Text fontSize="md" color='white'>{aPerspective.text}</Text>
+              </Box>
+              <Flex
+                justify="space-between"
+                wrap="wrap"
+                w="100%"
+              >
+                <Text fontSize="xs" color='#999999'>Number of comments:  {aPerspective.comments.length}</Text>
+              </Flex>
+            </Box>
+          </Link>
+        </Center>
+        </Spacer>
         ))}
     </div>
   );

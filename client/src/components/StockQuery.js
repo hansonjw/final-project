@@ -7,6 +7,14 @@ import AddPerspective from './AddPerspective.js';
 import { useQuery } from '@apollo/react-hooks';
 import { QUERY_GET_SECURITY } from '../utils/queries';
 
+import { Input, HStack, Stack, Box, Spacer, Heading, Flex, Center, Text, Button } from '@chakra-ui/react';
+import {
+    FormControl,
+    FormLabel,
+    FormErrorMessage,
+    FormHelperText,
+} from "@chakra-ui/react"
+
 
 const StockQuery = () => {
 
@@ -65,22 +73,28 @@ const StockQuery = () => {
 
     return (
         <div>
-            <h1>Stock Query Component</h1>
+            <Center><Stack spacing={5}>
+                <Spacer/>
+                <form onSubmit={handleFormSubmit}>
+                    <FormControl>
+                        <Stack>
+                            <HStack>
+                                <Input
+                                    placeholder="Enter a ticker symbol"
+                                    name="tickerSymbol"
+                                    value={searchTicker}
+                                    onChange={handleChange}
+                                    type="text"
+                                />
+                                <Button type="submit" bg='red.400' color='white'>
+                                    Get Data
+                                </Button>
+                            </HStack>
 
-            <form onSubmit={handleFormSubmit}>
-
-                <label>Get price data:</label>
-                <input
-                    placeholder="enter a ticker symbol"
-                    name="tickerSymbol"
-                    value={searchTicker}
-                    onChange={handleChange}
-                    type="text"
-                />
-                <button type='submit'>
-                    Get Data
-                </button>
-            </form>
+                        </Stack>
+                    </FormControl>
+                </form>
+            </Stack></Center>
             <StockChart chartData={stockData} />
             <AddPerspective ticker={ticker} />
             <PerspectiveList perspectiveData={perspectiveData} />
