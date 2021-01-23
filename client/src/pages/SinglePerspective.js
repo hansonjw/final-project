@@ -46,7 +46,7 @@ const SinglePerspective = () => {
 
 
     return (
-        <div>
+        <div class="body">>
             <h2>Single Perspective Page</h2>
             {Auth.loggedIn() &&
                 <form onSubmit={handleFormSubmit}>

@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import Auth from '../utils/auth';
+import { Box, Spacer, Heading, Flex, Text, Button } from '@chakra-ui/react';
 
 const Header = () => {
   const logout = event => {
@@ -9,29 +10,46 @@ const Header = () => {
   };
 
   return (
-    <header className="bg-secondary mb-4 py-2 flex-row align-center">
-      <div className="container flex-row justify-space-between-lg justify-center align-center">
-        <Link to="/">
-          <h1>Home</h1>
-        </Link>
-
-        <nav className="text-center">
+    // <header class="header">
+      <Flex
+        as="nav"
+        align="center"
+        justify="space-between"
+        wrap="wrap"
+        w="100%"
+        padding="1.5rem"
+        bg="red.900"
+        color="white"
+      >
+        <Heading as="h4" size="md" w="200">
+          <Link to="/">
+            <h1>Otium Capital</h1>
+          </Link>
+        </Heading>
+        <Spacer />
           {Auth.loggedIn() ? (
             <>
-              <Link to="/profile">Me</Link>
-              <a href="/" onClick={logout}>
-                Logout
-              </a>
+              <Box w="200px">
+                <Link to="/profile">Me</Link>
+              </Box>
+              <Box w="200px">
+                <a href="/" onClick={logout}>
+                  Logout
+                </a>
+              </Box>
             </>
           ) : (
             <>
-              <Link to="/login">Login</Link>
-              <Link to="/signup">Signup</Link>
+              <Box w="200px">
+                <Link to="/login">Login</Link>
+              </Box>
+              <Box w="200px">
+                <Link to="/signup">Signup</Link>
+              </Box>
             </>
           )}
-        </nav>
-      </div>
-    </header>
+      </Flex>
+    // </header>
   );
 };
 

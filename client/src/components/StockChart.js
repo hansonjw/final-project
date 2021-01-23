@@ -7,11 +7,10 @@ import { Chart } from "react-google-charts";
 const StockChart = (chartData) => {
 
   const options = {
-    title: "Security Price",
     // hAxis: { title: "Price", viewWindow: { min: 0, max: 100} },
     hAxis: { title: "Date", format: 'M/d/y' },
     // vAxis: { title: "Date", viewWindow: { min: 0, max: 1000 } },
-    vAxis: { title: "Price" },
+    vAxis: { title: "Price ($/share)" },
     legend: "none"
   };
 

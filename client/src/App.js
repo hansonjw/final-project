@@ -2,6 +2,8 @@ import React from 'react';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import { ApolloProvider } from '@apollo/react-hooks'
 import ApolloClient from 'apollo-boost';
+import { ChakraProvider, Box } from "@chakra-ui/react"
+
 
 // import pages and components...as you develop them...
 import NavBar from './components/NavBar';
@@ -28,22 +30,27 @@ const client = new ApolloClient({
 
 function App() {
   return (
-    <ApolloProvider client={client}>
-            <Router>
-              <div>
-                <NavBar />
-                <Switch>
-                    <Route exact path="/" component={Home} />
-                    <Route exact path="/login" component={Login} />
-                    <Route exact path="/signup" component={Signup} />
-                    <Route exact path="/singleperspective/:id" component={SinglePerspective} />
-                    <Route component={NoMatch} />
-                </Switch>
-                <Footer />
-              </div>
-            </Router>
-    </ApolloProvider>
+    <ChakraProvider>  
+      <ApolloProvider client={client}>
+              <Router>
+                <div className="mainpage">
+                  <NavBar />
+                      <Box h='100px'></Box>
+                      <Switch>
+                          <Route exact path="/" component={Home} />
+                          <Route exact path="/login" component={Login} />
+                          <Route exact path="/signup" component={Signup} />
+                          <Route exact path="/singleperspective/:id" component={SinglePerspective} />
+                          <Route component={NoMatch} />
+                      </Switch>
+                    
+                  <Footer />
+                </div>
+              </Router>
+      </ApolloProvider>
+    </ChakraProvider>
   );
 }
 
 export default App;
+

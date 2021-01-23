@@ -10,7 +10,7 @@ const Home = () => {
   const loggedIn = Auth.loggedIn();
 
   return (
-    <div>
+    <div class="body">
       <h2>Homepage</h2>
       <div>
         {loggedIn && (
