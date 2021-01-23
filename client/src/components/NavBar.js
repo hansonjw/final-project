@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import Auth from '../utils/auth';
-import { Box, Spacer, Heading, Flex, Text, Button } from '@chakra-ui/react';
+import { Box, Spacer, Heading, Flex, Center, Text, Button } from '@chakra-ui/react';
 
 const Header = () => {
   const logout = event => {
@@ -17,7 +17,7 @@ const Header = () => {
         justify="space-between"
         wrap="wrap"
         w="100%"
-        padding="1.5rem"
+        padding=".5rem"
         bg="red.900"
         color="white"
       >
@@ -29,23 +29,23 @@ const Header = () => {
         <Spacer />
           {Auth.loggedIn() ? (
             <>
-              <Box w="200px">
+              {/* <Center w="200px">
                 <Link to="/profile">Me</Link>
-              </Box>
-              <Box w="200px">
+              </Center> */}
+              <Center w="200px">
                 <a href="/" onClick={logout}>
                   Logout
                 </a>
-              </Box>
+              </Center>
             </>
           ) : (
             <>
-              <Box w="200px">
+              <Center w="200px">
                 <Link to="/login">Login</Link>
-              </Box>
-              <Box w="200px">
+              </Center>
+              <Center w="200px">
                 <Link to="/signup">Signup</Link>
-              </Box>
+              </Center>
             </>
           )}
       </Flex>

@@ -2,6 +2,13 @@ import React, { useState } from "react";
 import { useMutation } from '@apollo/react-hooks';
 import Auth from "../utils/auth";
 import { CREATE_USER } from "../utils/mutations";
+import { Input, SimpleGrid, Center, Button, Stack, Text, Box } from '@chakra-ui/react';
+import {
+  FormControl,
+  FormLabel,
+  FormErrorMessage,
+  FormHelperText,
+} from "@chakra-ui/react"
 
 function Signup(props) {
   const [formState, setFormState] = useState({ email: '', password: '' });
@@ -28,45 +35,53 @@ function Signup(props) {
 
   return (
     <div class="body">
+      <Center>
+        <Stack spacing={5}>
+          <Text fontSize="3xl" color='white'>Signup Page</Text>
+          <form onSubmit={handleFormSubmit}>
+            <FormControl>
+              <Stack spacing={5}>
+               <Box>
 
-      <h2>Signup</h2>
-      <form onSubmit={handleFormSubmit}>
-        <div className="flex-row space-between my-2">
-          <label htmlFor="displayName">Display Name:</label>
-          <input
-            placeholder="Display Name"
-            name="displayName"
-            type="displayName"
-            id="displayName"
-            onChange={handleChange}
-          />
-        </div>
-        <div className="flex-row space-between my-2">
-          <label htmlFor="email">Email:</label>
-          <input
-            placeholder="youremail@test.com"
-            name="email"
-            type="email"
-            id="email"
-            onChange={handleChange}
-          />
-        </div>
-        <div className="flex-row space-between my-2">
-          <label htmlFor="pwd">Password:</label>
-          <input
-            placeholder="******"
-            name="password"
-            type="password"
-            id="pwd"
-            onChange={handleChange}
-          />
-        </div>
-        <div className="flex-row flex-end">
-          <button type="submit">
-            Submit
-          </button>
-        </div>
-      </form>
+                  <FormLabel htmlFor="displayName" color='white'>Display Name:</FormLabel>
+                  <Input
+                    placeholder="Display Name"
+                    name="displayName"
+                    type="displayName"
+                    id="displayName"
+                    onChange={handleChange}
+                  />
+
+
+                  <FormLabel htmlFor="email" color='white'>Email:</FormLabel>
+                  <Input
+                    placeholder="youremail@test.com"
+                    name="email"
+                    type="email"
+                    id="email"
+                    onChange={handleChange}
+                  />
+
+
+                  <FormLabel htmlFor="pwd" color='white'>Password:</FormLabel>
+                  <Input
+                    placeholder="******"
+                    name="password"
+                    type="password"
+                    id="pwd"
+                    onChange={handleChange}
+                  />
+                
+                </Box>
+              
+                <Button type="submit" bg='red.400' color='white'>
+                    Signup
+                </Button>
+              </Stack>
+            </FormControl>
+          </form>
+        </Stack>
+      </Center>
     </div>
   );
 

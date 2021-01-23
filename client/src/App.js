@@ -35,7 +35,7 @@ function App() {
               <Router>
                 <div className="mainpage">
                   <NavBar />
-                      <Box h='100px'></Box>
+                      {/* <Box h='100px'>spacer...</Box> */}
                       <Switch>
                           <Route exact path="/" component={Home} />
                           <Route exact path="/login" component={Login} />

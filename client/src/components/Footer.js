@@ -1,5 +1,5 @@
 import React from 'react';
-import { Flex, Box, Spacer } from '@chakra-ui/react';
+import { Flex, Center, Box, Spacer } from '@chakra-ui/react';
 
 const Footer = () => {
   return (
@@ -9,19 +9,19 @@ const Footer = () => {
         align="center"
         justify="space-between"
         wrap="wrap"
-        padding="1rem"
+        padding=".5rem"
         bg="red.900"
         color="white"
       >
-        <Box w="500px">fostering wealth and wisdom...</Box>
-        <Spacer />
-        <Box w="500px">
+        <Center w="500px">fostering wealth and wisdom...</Center>
+        {/* <Spacer /> */}
+        <Center w="500px">
           ...page built by Justin Hanson
-        </Box>
-        <Spacer />
-        <Box w="500px">
+        </Center>
+        {/* <Spacer /> */}
+        <Center w="500px">
           <a href="https://twitter.com/hansonjw">Twitter</a>
-        </Box>
+        </Center>
       </Flex>
     </footer>
   );

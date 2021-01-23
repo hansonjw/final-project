@@ -18,8 +18,6 @@ const Home = () => {
             <StockQuery></StockQuery>
           </div>
         )}
-        
-        {/* <Link to="/stockquery">go to the search page</Link> */}
       </div>
     </div>
   );
