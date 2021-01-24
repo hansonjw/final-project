@@ -1,7 +1,7 @@
 # Otium Capital  
 [Otium](https://en.wiktionary.org/wiki/otium)
-A community dedicated to freeing mental capital from stress and worries over money<br>
-through collecting, generating, and sharing ideas for investing on a social media style platform 
+A community dedicated to freeing 'mental capital' from stress and worries over moneythrough<br>
+collecting, generating, and sharing ideas for investing on a social media style platform 
 
 <img src="./assets/Landing.png" alt="Landing Page" width="400" height="225">
 
@@ -14,7 +14,7 @@ through collecting, generating, and sharing ideas for investing on a social medi
 [Questions](#questions)  
 
 ## Installation
-Access the web-based application deployed at the following link;
+No installition is required - access the web-based application deployed at the following link to get started;
 https://otiumcapital.herokuapp.com/
 
 ## How-To
@@ -68,12 +68,13 @@ For questions, comments, suggestions, I can be reached at the following:
 
 ## Future Development
 * Payment platform integration
-* 3rd party authentication such as Google, etc.
+* 3rd party authentication such as Google
 * Enhanced social media style features such as likes and dislikes, up/down-voting, etc.
+* Enhance User experience, structure, and flow
 
 # Project Requirements
 
-	Note: This code basae was submitted as part of the UC Berkely Coding Boot Camp.  Key assignment requirements are outlined below:
+	Note: This code base was submitted as part of the UC Berkely Coding Boot Camp.  Key assignment requirements are outlined below:
 
 	* Use React for the front end.
 	* Use GraphQL with a Node.js and Express.js server.
