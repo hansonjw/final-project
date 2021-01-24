@@ -30,8 +30,9 @@ https://otiumcapital.herokuapp.com/
 	* Enter a Ticker Symbol for a company of interest to you
 	* When you click the 'Get Data' button you will be presented with recent price data and<br>
 	any perspectives others in the community have put forth
+	* Consider searching companies such as 'AAPL', 'TSLA', 'BRK-A' at first to get aquainted with the application
 
-<img src="./assets/Search.png" alt="Search Box Page" width="200" height="125">
+<img src="./assets/Search.png" alt="Search Box Page" width="200" height="125"> <img src="./assets/Chart.png" alt="Search Box Page" width="200" height="125">
 
 3. Step: Contribute
 	* After being presented with Data on a company, you can now contribute
@@ -39,7 +40,7 @@ https://otiumcapital.herokuapp.com/
 	where you can read comments and/or submit your own by filling out the form
 	* You can submit a new perspective by filling out the for presented under the price data <br>
 
-<img src="./assets/Chart.png" alt="Search Box Page" width="200" height="125"> <img src="./assets/SinglePerspective.png" alt="Search Box Page" width="200" height="125"> <img src="./assets/AddPerspective.png" alt="Search Box Page" width="200" height="125">
+<img src="./assets/SinglePerspective.png" alt="Search Box Page" width="200" height="125"> <img src="./assets/AddPerspective.png" alt="Search Box Page" width="200" height="125">
 
 ## Technologies Employed
 * The front end experience, CSS and responsive design was done with [Chakra-ui](https://chakra-ui.com/)
