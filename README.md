@@ -1,9 +1,9 @@
 # Otium Capital  
 [Otium](https://en.wiktionary.org/wiki/otium)
-A community to collect and generate ideas for investing<br>
-Dedicated to freeing mental capital from stress and worries over money<br>
+A community dedicated to freeing mental capital from stress and worries over money<br>
+through collecting, generating, and sharing ideas for investing on a social media style platform 
 
-<img src="./assets/Landing.png" alt="Landing Page" width="300" height="200">
+<img src="./assets/Landing.png" alt="Landing Page" width="400" height="225">
 
 ## Description
 This application is a 'social media' style platform for investors to engage and discuss ideas on individual companies and investment ideas.
