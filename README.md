@@ -24,19 +24,24 @@ https://otiumcapital.herokuapp.com/
 1. Step 1: Login or Sign Up
 	* Click the links in the navigation menu (upper right)
 	* Fill out the corresponding form that is presented
-	* Click the submit button
+	* Click the submit button <br>
+
 <img src="./assets/Login.png" alt="Login Page" width="200" height="125"> <img src="./assets/SignUp.png" alt="Sign Up Page" width="200" height="125">
+
 2. Step 2: Explore
 	* After logging in or signing up you are presented with a box to enter a Ticker symbol
 	* Enter a Ticker Symbol for a company of interest to you
 	* When you click the 'Get Data' button you will be presented with recent price data and<br>
 	any perspectives others in the community have put forth
+
 <img src="./assets/Search.png" alt="Search Box Page" width="200" height="125">
+
 3. Step: Contribute
 	* After being presented with Data on a company, you can now contribute
 	* The list of perspectives are clickable and when you click you will be taken to a new page<br>
 	where you can read comments and/or submit your own by filling out the form
-	* You can submit a new perspective by filling out the for presented under the price data
+	* You can submit a new perspective by filling out the for presented under the price data <br>
+
 <img src="./assets/Chart.png" alt="Search Box Page" width="200" height="125"> <img src="./assets/SinglePerspective.png" alt="Search Box Page" width="200" height="125"> <img src="./assets/AddPerspective.png" alt="Search Box Page" width="200" height="125">
 
 ## Technologies Employed
