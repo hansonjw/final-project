@@ -16,7 +16,7 @@ const StockChart = (chartData) => {
 
   if (chartData.chartData.length<=1){
     return (
-      <div>no data to plot...</div>
+      <div></div>
     )
   }
 
