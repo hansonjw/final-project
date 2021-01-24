@@ -16,7 +16,8 @@ code {
 .header{
   position: fixed;
   top: 0;
-  width: 100%
+  width: 100%;
+  z-index: 1000;
 }
 
 
@@ -39,6 +40,6 @@ code {
   height: 2.5rem;            /* Footer height */
 }
 
-@media screen and (min-width: 0px) and (max-width: 48em) {
+@media screen and (min-width: 0px) and (max-width: 70em) {
   #footeritem { display: none; }  /* don't show it on small screens */
 }

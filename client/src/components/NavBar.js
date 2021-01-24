@@ -23,7 +23,7 @@ const Header = () => {
         bg="#1a0a00"
         color="white"
       >
-        <Heading as="h4" size="md" w="200" _hover={{ color: "#e65c00" }}>
+        <Heading as="h4" size="md" mx={["0rem","0rem","2rem"]} _hover={{ color: "#e65c00" }}>
           <Link to="/">
             <h1>Otium Capital</h1>
           </Link>
@@ -42,12 +42,17 @@ const Header = () => {
             </>
           ) : (
             <>
-              <Center w={[100, 200]} _hover={{ color: "#e65c00" }}>
-                <Link to="/login">Login</Link>
-              </Center>
-              <Center w={[100, 200]} _hover={{ color: "#e65c00" }}>
-                <Link to="/signup">Sign Up</Link>
-              </Center>
+              {/* <Box w={[sm, md]}> */}
+              <Box mx={["1rem","1rem","7rem"]}>
+                <Center _hover={{ color: "#e65c00" }}>
+                  <Link to="/login">Login</Link>
+                </Center>
+              </Box>
+              <Box mx={["1rem","1rem","7rem"]}>
+                <Center  _hover={{ color: "#e65c00" }}>
+                  <Link to="/signup">Sign Up</Link>
+                </Center>
+              </Box>
             </>
           )}
       </Flex>
