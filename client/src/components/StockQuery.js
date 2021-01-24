@@ -84,9 +84,11 @@ const StockQuery = () => {
                                     name="tickerSymbol"
                                     value={searchTicker}
                                     onChange={handleChange}
+                                    bg='white'
+                                    borderColor="#e65c00"
                                     type="text"
                                 />
-                                <Button type="submit" bg='red.400' color='white'>
+                                <Button type="submit" bg="#e65c00" color='white'>
                                     Get Data
                                 </Button>
                             </HStack>

@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { useMutation } from '@apollo/react-hooks';
 import Auth from "../utils/auth";
 import { CREATE_USER } from "../utils/mutations";
-import { Input, SimpleGrid, Center, Button, Stack, Text, Box } from '@chakra-ui/react';
+import { Input, Center, Button, Stack, Text, Box } from '@chakra-ui/react';
 import {
   FormControl,
   FormLabel,
@@ -43,40 +43,50 @@ function Signup(props) {
           <form onSubmit={handleFormSubmit}>
             <FormControl>
               <Stack spacing={5}>
-               <Box>
+                <Box Box w={[200, 400]}>
 
-                  <FormLabel htmlFor="displayName" color='white'>Display Name:</FormLabel>
-                  <Input
-                    placeholder="Display Name"
-                    name="displayName"
-                    type="displayName"
-                    id="displayName"
-                    onChange={handleChange}
-                  />
+                  <Box py='3'>
+                    <FormLabel htmlFor="displayName" color='white'>Display Name:</FormLabel>
+                    <Input
+                      placeholder="Display Name"
+                      name="displayName"
+                      type="displayName"
+                      id="displayName"
+                      bg='white'
+                      borderColor="#e65c00"
+                      onChange={handleChange}
+                    />
+                  </Box>
 
+                  <Box py='3'>
+                    <FormLabel htmlFor="email" color='white'>Email:</FormLabel>
+                    <Input
+                      placeholder="youremail@test.com"
+                      name="email"
+                      type="email"
+                      id="email"
+                      bg='white'
+                      borderColor="#e65c00"
+                      onChange={handleChange}
+                    />
+                  </Box>
 
-                  <FormLabel htmlFor="email" color='white'>Email:</FormLabel>
-                  <Input
-                    placeholder="youremail@test.com"
-                    name="email"
-                    type="email"
-                    id="email"
-                    onChange={handleChange}
-                  />
-
-
-                  <FormLabel htmlFor="pwd" color='white'>Password:</FormLabel>
-                  <Input
-                    placeholder="******"
-                    name="password"
-                    type="password"
-                    id="pwd"
-                    onChange={handleChange}
-                  />
+                  <Box py='3'>
+                    <FormLabel htmlFor="pwd" color='white'>Password:</FormLabel>
+                    <Input
+                      placeholder="******"
+                      name="password"
+                      type="password"
+                      id="pwd"
+                      bg='white'
+                      borderColor="#e65c00"
+                      onChange={handleChange}
+                    />
+                  </Box>
                 
                 </Box>
               
-                <Button type="submit" bg='red.400' color='white'>
+                <Button type="submit" bg="#e65c00" color='white'>
                     Signup
                 </Button>
               </Stack>

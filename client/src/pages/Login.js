@@ -44,33 +44,41 @@ function Login(props) {
           <form onSubmit={handleFormSubmit}>
             <FormControl>
               <Stack spacing={7}>
-                <Box>
-                <FormLabel htmlFor="email" color='white'>Email address:</FormLabel>
-                <Input
-                  placeholder="youremail@test.com"
-                  name="email"
-                  type="email"
-                  id="email"
-                  onChange={handleChange}
-                />
-                
-                <FormLabel htmlFor="pwd" color='white'>Password:</FormLabel>
-                <Input
-                  placeholder="******"
-                  name="password"
-                  type="password"
-                  id="pwd"
-                  onChange={handleChange}
-                />
+                <Box Box w={[200, 400]}>
+                  <Box py='3'>
+                    <FormLabel htmlFor="email" color='white'>Email address:</FormLabel>
+                    <Input
+                      placeholder="youremail@test.com"
+                      name="email"
+                      type="email"
+                      id="email"
+                      bg='white'
+                      borderColor="#e65c00"
+                      onChange={handleChange}
+                    />
+                  </Box>
+
+                  <Box py='3'>
+                    <FormLabel htmlFor="pwd" color='white'>Password:</FormLabel>
+                    <Input
+                      placeholder="******"
+                      name="password"
+                      type="password"
+                      id="pwd"
+                      bg='white'
+                      borderColor="#e65c00"
+                      onChange={handleChange}
+                    />
+                  </Box>
 
 
-                {
-                  error ? <div>
-                    <p className="error-text" >The provided credentials are incorrect</p>
-                  </div> : null
-                }
+                  {
+                    error ? <div>
+                      <Text color="white" >The provided credentials are incorrect</Text>
+                    </div> : null
+                  }
                 </Box>
-                <Button type="submit" bg='red.400' color='white'>
+                <Button type="submit" bg="#e65c00" color='white'>
                   Login
                 </Button>
               </Stack>

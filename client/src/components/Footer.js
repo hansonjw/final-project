@@ -10,7 +10,7 @@ const Footer = () => {
         justify="space-between"
         wrap="wrap"
         padding=".5rem"
-        bg="#4d0026"
+        bg="#1a0a00"
         color="white"
       >
         <Center w="500px">fostering wealth and wisdom...</Center>

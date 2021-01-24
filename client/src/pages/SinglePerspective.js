@@ -7,6 +7,14 @@ import { QUERY_GET_PERSPECTIVE } from '../utils/queries';
 import { ADD_COMMENT } from '../utils/mutations';
 import CommentList from '../components/CommentList';
 
+import { Textarea, Divider, Input, VStack, Stack, Box, Spacer, Heading, Flex, Center, Text, Button } from '@chakra-ui/react';
+import {
+    FormControl,
+    FormLabel,
+    FormErrorMessage,
+    FormHelperText,
+} from "@chakra-ui/react"
+
  
 const SinglePerspective = () => {
 
@@ -46,34 +54,43 @@ const SinglePerspective = () => {
 
 
     return (
-        <div class="body">>
-            <h2>Single Perspective Page</h2>
-            {Auth.loggedIn() &&
-                <form onSubmit={handleFormSubmit}>
-                    <textarea
-                        placeholder="new comment..."
-                        value={commentText}
-                        onChange={handleChange}
-                    ></textarea>
-                    <button type="submit">
-                        Add a comment
-                    </button>
-                </form>}
-            <div>
-                <p>{perspectiveData.security}</p>
-                <p>{perspectiveData._id}</p>
-                <p>{perspectiveData.text}</p>
-                <p>{perspectiveData.email}</p>
-                <p>{perspectiveData.date}</p>
-                {/* {commentsAr.map(aComment => (
-                    <div>
-                        <p>Comment ID: {aComment._id}</p>
-                        <p>{aComment.commentText}</p>
-                        <p>Comment from: {aComment.email}</p>
-                    </div>
-                ))} */}
-                <CommentList comments={commentsAr}></CommentList>
-            </div>
+        <div class="body">
+            {Auth.loggedIn() && 
+            <Center>
+                <Box p="3" w={[300, 400, 1000]}>
+                    <Box>
+                        <Center>
+                            <Text color="white" fontSize={['xl', '4xl', '6xl']}>{perspectiveData.security}</Text>
+                        </Center>
+                        <Box p="3">
+                            <Text fontSize="sm" color='#999999'>Perspective written by: {perspectiveData.email}</Text>
+                            <Text fontSize="sm" color='#999999'>Date: {perspectiveData.date}</Text>
+                            <Text Text fontSize="md" color='white' py="3">{perspectiveData.text}</Text>
+                        </Box>
+                    </Box>
+                    <form onSubmit={handleFormSubmit}>
+                        <FormControl>
+                            <Textarea
+                                placeholder="new comment..."
+                                bg="White"
+                                borderWidth="1px"
+                                borderColor="red.400"
+                                borderRadius="lg"
+                                h={[50, 100]}
+                                value={commentText}
+                                onChange={handleChange}
+                            ></Textarea>
+                            <Center>
+                                <Button type="submit" bg="#e65c00" color='white' my="3">
+                                    Add a comment
+                                </Button>
+                            </Center>
+                        </FormControl>
+                    </form>
+                    <CommentList comments={commentsAr}></CommentList>
+                </Box>
+            </Center>
+            }
         </div>
     );
 };

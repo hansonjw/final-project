@@ -19,7 +19,7 @@ const Header = () => {
         w="100%"
         padding=".5rem"
         // bg="red.900"
-        bg="#4d0026"
+        bg="#1a0a00"
         color="white"
       >
         <Heading as="h4" size="md" w="200">

@@ -25,7 +25,7 @@ const StockChart = (chartData) => {
         <Stack spacing={5}>
           <Spacer/>
           <Center>
-            <Box w={[300, 400, 1000]} borderWidth="1px" borderColor="red.400" borderRadius="lg" bg='white'>
+            <Box w={[300, 400, 1000]} borderWidth="1px" borderColor="#e65c00" borderRadius="lg" bg='white'>
             {/* <Box w="60%" borderWidth="1px" borderColor="red.400" borderRadius="lg" bg='white'> */}
               <Box p="3">
               <Chart
