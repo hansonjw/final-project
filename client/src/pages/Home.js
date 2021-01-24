@@ -22,11 +22,13 @@ const Home = () => {
           <Center>
           <Stack spacing={10}>
               <Spacer />
+              <Box py="5rem">
+                <Center>
+                  <Text  fontSize="5xl" color='white'>Otium Capital</Text>
+                </Center>
+              </Box>
               <Center>
-                <Text  fontSize="3xl" color='white'>Welcome to Otium Capital</Text>
-              </Center>
-              <Center>
-                <Text fontSize="m" color='white'>Please login or signup to begin</Text>
+                <Text fontSize="m" color='white'>Welcome! Please login or sign up to begin</Text>
               </Center>
           </Stack>
         </Center>

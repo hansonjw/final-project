@@ -23,11 +23,11 @@ const Header = () => {
         bg="#1a0a00"
         color="white"
       >
-        <Heading as="h4" size="md" mx={["0rem","0rem","2rem"]} _hover={{ color: "#e65c00" }}>
+        <Box mx={["0rem","0rem","2rem"]} _hover={{ color: "#e65c00" }}>
           <Link to="/">
-            <h1>Otium Capital</h1>
+            <Text>Otium Capital</Text>
           </Link>
-        </Heading>
+        </Box>
         <Spacer />
           {Auth.loggedIn() ? (
             <>
