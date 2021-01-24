@@ -25,5 +25,8 @@
   "bugs": {
     "url": "https://github.com/hansonjw/final-project/issues"
   },
-  "homepage": "https://github.com/hansonjw/final-project#readme"
+  "homepage": "https://github.com/hansonjw/final-project#readme",
+  "dependencies": {
+    "if-env": "^1.0.4"
+  }
 }
