@@ -25,8 +25,7 @@ https://otiumcapital.herokuapp.com/
 	* Click the links in the navigation menu (upper right)
 	* Fill out the corresponding form that is presented
 	* Click the submit button
-<img src="./assets/Login.png" alt="Login Page" width="200" height="125">
-<img src="./assets/SignUp.png" alt="Sign Up Page" width="200" height="125">
+<img src="./assets/Login.png" alt="Login Page" width="200" height="125"> <img src="./assets/SignUp.png" alt="Sign Up Page" width="200" height="125">
 2. Step 2: Explore
 	* After logging in or signing up you are presented with a box to enter a Ticker symbol
 	* Enter a Ticker Symbol for a company of interest to you
@@ -38,9 +37,7 @@ https://otiumcapital.herokuapp.com/
 	* The list of perspectives are clickable and when you click you will be taken to a new page<br>
 	where you can read comments and/or submit your own by filling out the form
 	* You can submit a new perspective by filling out the for presented under the price data
-<img src="./assets/Chart.png" alt="Search Box Page" width="200" height="125">
-<img src="./assets/SinglePerspective.png" alt="Search Box Page" width="200" height="125">
-<img src="./assets/AddPerspective.png" alt="Search Box Page" width="200" height="125">
+<img src="./assets/Chart.png" alt="Search Box Page" width="200" height="125"> <img src="./assets/SinglePerspective.png" alt="Search Box Page" width="200" height="125"> <img src="./assets/AddPerspective.png" alt="Search Box Page" width="200" height="125">
 
 ## Technologies Employed
 * The front end experience, CSS and responsive design was done with [Chakra-ui](https://chakra-ui.com/)
