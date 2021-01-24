@@ -38,7 +38,7 @@ function Signup(props) {
       <Center>
         <Stack spacing={5}>
           <Center>
-            <Text fontSize="3xl" color='white'>Signup Page</Text>
+            <Text fontSize="3xl" color='white'>Sign Up Page</Text>
           </Center>
           <form onSubmit={handleFormSubmit}>
             <FormControl>
@@ -87,7 +87,7 @@ function Signup(props) {
                 </Box>
               
                 <Button type="submit" bg="#e65c00" color='white'>
-                    Signup
+                    Sign Up
                 </Button>
               </Stack>
             </FormControl>

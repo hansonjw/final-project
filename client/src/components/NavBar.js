@@ -11,6 +11,7 @@ const Header = () => {
 
   return (
     // <header class="header">
+    <div class="header">
       <Flex
         as="nav"
         align="center"
@@ -22,7 +23,7 @@ const Header = () => {
         bg="#1a0a00"
         color="white"
       >
-        <Heading as="h4" size="md" w="200">
+        <Heading as="h4" size="md" w="200" _hover={{ color: "#e65c00" }}>
           <Link to="/">
             <h1>Otium Capital</h1>
           </Link>
@@ -33,7 +34,7 @@ const Header = () => {
               {/* <Center w="200px">
                 <Link to="/profile">Me</Link>
               </Center> */}
-              <Center w="200px">
+              <Center w="200px" _hover={{ color: "#e65c00" }}>
                 <a href="/" onClick={logout}>
                   Logout
                 </a>
@@ -41,15 +42,16 @@ const Header = () => {
             </>
           ) : (
             <>
-              <Center w="200px">
+              <Center w={[100, 200]} _hover={{ color: "#e65c00" }}>
                 <Link to="/login">Login</Link>
               </Center>
-              <Center w="200px">
-                <Link to="/signup">Signup</Link>
+              <Center w={[100, 200]} _hover={{ color: "#e65c00" }}>
+                <Link to="/signup">Sign Up</Link>
               </Center>
             </>
           )}
       </Flex>
+    </div>
     // </header>
   );
 };

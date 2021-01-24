@@ -13,13 +13,13 @@ const Footer = () => {
         bg="#1a0a00"
         color="white"
       >
-        <Center w="500px">fostering wealth and wisdom...</Center>
+        <Center w="500px" id='footeritem'>fostering wealth and wisdom...</Center>
         {/* <Spacer /> */}
-        <Center w="500px">
+        <Center w="500px" id='footeritem'>
           ...page built by Justin Hanson
         </Center>
         {/* <Spacer /> */}
-        <Center w="500px">
+        <Center w="500px" _hover={{ color: "#e65c00" }}>
           <a href="https://twitter.com/hansonjw" target="_blank">Twitter</a>
         </Center>
       </Flex>

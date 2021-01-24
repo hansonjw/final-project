@@ -23,13 +23,11 @@ code {
 .mainpage {
   position: relative;
   min-height: 100vh;
-  /* background: #1a0008; */
-  /* background: #660033; */
-  /* background:#e65c00 */
-  background: #331400
+  background: #331400;
 }
 
 .body {
+  padding-top: 2.5rem;
   padding-bottom: 2.5rem;    /* Footer height */
 }
 
@@ -38,4 +36,8 @@ code {
   bottom: 0;
   width: 100%;
   height: 2.5rem;            /* Footer height */
+}
+
+@media screen and (min-width: 0px) and (max-width: 48em) {
+  #footeritem { display: none; }  /* don't show it on small screens */
 }

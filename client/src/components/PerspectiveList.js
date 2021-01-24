@@ -28,7 +28,7 @@ const PerspectiveList = ({ perspectiveData }) => {
         <Center>
           
           <Link to={`/singleperspective/${aPerspective._id}`}>
-            <Box w={[300, 400, 1000]} borderWidth="1px" borderColor="grey" borderRadius="lg" my="3">
+            <Box w={[300, 400, 1000]} borderWidth="1px" borderColor="grey" borderRadius="lg" my="3" _hover={{ borderColor: "#e65c00" }}>
               {/* <HStack w='100%'> */}
               <Flex
                 justify="space-between"
