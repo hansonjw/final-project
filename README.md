@@ -5,9 +5,6 @@ through collecting, generating, and sharing ideas for investing on a social medi
 
 <img src="./assets/Landing.png" alt="Landing Page" width="400" height="225">
 
-## Description
-This application is a 'social media' style platform for investors to engage and discuss ideas on individual companies and investment ideas.
-
 ## Table of Contents
 [Installation Instructions](#installation)  
 [How to use This Application](#how-to)
